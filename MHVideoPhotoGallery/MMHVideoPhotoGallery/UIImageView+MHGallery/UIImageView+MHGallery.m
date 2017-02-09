@@ -63,8 +63,8 @@
             placeholderURL = item.URLString;
         }
         
-        [self sd_setImageWithURL:[NSURL URLWithString:toLoadURL]
-                placeholderImage:[SDImageCache.sharedImageCache imageFromDiskCacheForKey:placeholderURL]
+        [self sd_setImageWithURL:item.mainURL
+                placeholderImage:item.thumbnailURL
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                            if (succeedBlock) {
                                succeedBlock (image,error);
